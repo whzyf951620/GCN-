@@ -1,8 +1,6 @@
 ## Graph Convolutional Networks原文阅读和一些推导
 
-You can use the [editor on GitHub](https://github.com/whzyf951620/GCN-/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+原文链接：https://arxiv.org/abs/1609.02907 发表于ICLR2016.
 
 ### Markdown
 
