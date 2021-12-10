@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Graph Convolutional Networks原文阅读和一些推导
 
 You can use the [editor on GitHub](https://github.com/whzyf951620/GCN-/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
