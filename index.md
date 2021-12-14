@@ -31,10 +31,12 @@ GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: A, H^{(l)} 
 首先，我们需要证明$L$的半正定性，即证明对于任意非零向量$\mathbf{x}$，其二次型$\mathbf{x}^T L \mathbf{x} \geq 0$，
 其可等价于$L$的所有特征值都大于等于0。
 证明：
-首先构造矩阵$G^{ij} \in \mathcal{R}^{N \times N}$，其构造方法为：$G_{ii}^{ij} = 1$，$G_{jj}^{ij} = 1$，$G_{ij}^{ij} = G_{ji}^{ij} = 1$，其余位置为0。
+首先构造矩阵$G^{ij} \in \mathcal{R}^{N \times N}$，其构造方法为：$G_{ii}^{ij} = 1$，$G_{jj}^{ij} = -1$，$G_{ij}^{ij} = G_{ji}^{ij} = 1$，其余位置为0。
 其中上标为矩阵的名称，下标为矩阵中元素的序号。
 则易得$L = \sum_i \sum_j G^{ij}$。
 又因为$\mathbf{x}^TG^{ij}\mathbf{x}^T = \mathbf{x}^T \cdot \[\cdots, \mathbf{x_i} - \mathbf{x_j}, \cdots, \mathbf{x_j} - \mathbf{x_i}, \cdots\]$。
+上式又可以化简为$\mathbf{x_i}(\mathbf{x_i} - \mathbf{x_j}) + \mathbf{x_j}(\mathbf{x_j} - \mathbf{x_i}) = (\mathbf{x_i} - \mathbf{x_j})^2 \geq 0$，
+证毕。
 
 根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
 设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{x_i}$，则$L\lambda_i = L\mathbf{x_i}$。
