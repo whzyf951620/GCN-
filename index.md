@@ -30,24 +30,28 @@ GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: (A, H^{(l)}
 
 下面我们对拉普拉斯矩阵$L$及其归一化形式$L_{sym}$的性质进行一些讨论。
 
-首先，我们需要证明$L$的半正定性，即证明对于任意非零向量$\mathbf{x}$，其二次型$\mathbf{x}^T L \mathbf{x} \geq 0$，
+1、我们需要证明$L$的半正定性，即证明对于任意非零向量$\mathbf{x}$，其二次型$\mathbf{x}^T L \mathbf{x} \geq 0$，
 其可等价于$L$的所有特征值都大于等于0。
-证明：
+证明1：
 首先构造矩阵$G^{ij} \in \mathcal{R}^{N \times N}$，其构造方法为：$G_{ii}^{ij} = 1$，$G_{jj}^{ij} = -1$，$G_{ij}^{ij} = G_{ji}^{ij} = 1$，其余位置为0。
 其中上标为矩阵的名称，下标为矩阵中元素的序号。
 则易得$L = \sum_i \sum_j G^{ij}$。
 又因为$\mathbf{x}^TG^{ij}\mathbf{x}^T = \mathbf{x}^T \cdot \[\cdots, \mathbf{x_i} - \mathbf{x_j}, \cdots, \mathbf{x_j} - \mathbf{x_i}, \cdots\]^T$。
-上式又可以化简为$\mathbf{x_i}(\mathbf{x_i} - \mathbf{x_j}) + \mathbf{x_j}(\mathbf{x_j} - \mathbf{x_i}) = (\mathbf{x_i} - \mathbf{x_j})^2 \geq 0$，
+上式又可以化简为$\mathbf{x_i}(\mathbf{x_i} - \mathbf{x_j}) + \mathbf{x_j}(\mathbf{x_j} - \mathbf{x_i}) = (\mathbf{x_i} - \mathbf{x_j})^2 \geq 0$。
+则易得我们证明的目标$\mathbf{x}^T L \mathbf{x} = \mathbf{x}^T (\sum_i \sum_j G^{ij}) \mathbf{x} = \sum_i \sum_j (\mathbf{x_i} - \mathbf{x_j})^2 \geq 0$。
 证毕。
 
-下面，我们给出$L_{sym}$的定义：
+2、我们给出$L_{sym}$的定义：
 $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$。
 对于$L_{sym}$，我们给出两面两条性质的证明：
 （1）$L_{sym}$的半正定性；
 （2）$L_{sym}$的特征值范围为$\[0, 2\]$，该范围保证了在使用$L_{sym}$时，GCN不会出现梯度爆炸的情况。
 
-证明(1):
+证明2(1):
 与$L$证明相似，我们首先构造矩阵集合$G = \\{G^{i, j}\\}^{N, N}_{i, j}$。
+由于$\mathbf{x}^TL_{sym}\mathbf{x}^T = (\mathbf{x}D^{-\frac{1}{2}})^T L (\mathbf{x}D^{-\frac{1}{2}})$。
+根据证明1，易得上式为$\sum_i \sum_j (\frac{\mathbf{x_i}}{\sqrt{d_i}} - \frac{\mathbf{x_i}}{\sqrt{d_j}})^2 \geq 0$，
+其中，$d_i$ 为矩阵$D$中对角
 
 根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
 设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{x_i}$，则$L\lambda_i = L\mathbf{x_i}$。
@@ -56,14 +60,3 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 且其最大值最小值都在非零向量$\mathbf{x}$为$L$的特征向量时取得。则正定性证明可以转化为：当$\mathbf{x}$为任意$L$的特征向量时，其瑞利熵大于等于0恒成立。
 
 $\frac{\mathbf{x}^TL\mathbf{x}}{\mathbf{x}^T\mathbf{x}} = \frac{\mathbf{x}^T (\lambda\mathbf{x})}{\mathbf{x}^T\mathbf{x}} = \frac{\lambda(\mathbf{x}^T\mathbf{x})}{\mathbf{x}^T\mathbf{x}}$
-
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/whzyf951620/GCN-/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
