@@ -22,7 +22,7 @@
 
 ### GNN (Graph Neural Network)
 
-GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: A, H^{(l)} \rightarrow H^{(l+1)}$，其中$H^{(l)}$为$l_{th}$层网络的输入，$H^{(l+1)}$为$l_{th}$层网络的输出。
+GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: (A, H^{(l)}) \rightarrow H^{(l+1)}$，其中$H^{(l)}$为$l_{th}$层网络的输入，$H^{(l+1)}$为$l_{th}$层网络的输出。
 
 ### GCN (Graph Convolutional Network)
 与GNN不同
