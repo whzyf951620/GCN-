@@ -68,12 +68,9 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 即$\mathbf{x}^T\mathbf{x} \geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})$，
 
 $2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})$，
-
-$2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}} \mathbf{x}$，
-
-$2 \geq I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}}$，
-
-$L_{sym} = I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}} \leq 2$。
+$2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \mathbf{x}$，
+$2 \geq I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})$，
+$L_{sym} = I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \leq 2$。
 证毕。
 
 根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
