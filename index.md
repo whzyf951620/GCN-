@@ -43,7 +43,7 @@ GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: (A, H^{(l)}
 
 2、我们给出$L_{sym}$的定义：
 $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$。
-对于$L_{sym}$，我们给出两面两条性质的证明：
+对于$L_{sym}$，我们给出两条性质的证明：
 （1）$L_{sym}$的半正定性；
 （2）$L_{sym}$的特征值范围为$\[0, 2\]$，该范围保证了在使用$L_{sym}$时，GCN不会出现梯度爆炸的情况。
 
@@ -57,8 +57,9 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 证明2、(2):
 我们首先构造矩阵集合$S = \\{S^{i, j}\\}^{N, N}_{i, j}$。
 
-其中$S^{i, j}$与$G^{i, j}$类似，唯一不同的地方在于，$S_{ij}^{ij} = S_{ji}^{ij} = -1$。
-
+其中$S^{i, j}$与$G^{i, j}$类似，唯一不同的地方在于，$S_{ij}^{ij} = S_{ji}^{ij} = 1$。
+与上述证明类似，$\mathbf{x_i}(\mathbf{x_i} + \mathbf{x_j}) + \mathbf{x_j}(\mathbf{x_j} + \mathbf{x_i}) = (\mathbf{x_i} + \mathbf{x_j})^2 \geq 0$。
+由于$L = D - A = \sum_i \sum_j G^{ij}$，而$\sum_i \sum_j S^{ij} = D + A$
 
 根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
 设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{x_i}$，则$L\lambda_i = L\mathbf{x_i}$。
