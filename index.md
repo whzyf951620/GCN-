@@ -33,7 +33,7 @@ GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: (A, H^{(l)}
 1、我们需要证明$L$的半正定性，即证明对于任意非零向量$\mathbf{x}$，其二次型$\mathbf{x}^T L \mathbf{x} \geq 0$，
 其可等价于$L$的所有特征值都大于等于0。
 证明1：
-首先构造矩阵$G^{ij} \in \mathcal{R}^{N \times N}$，其构造方法为：$G_{ii}^{ij} = 1$，$G_{jj}^{ij} = -1$，$G_{ij}^{ij} = G_{ji}^{ij} = 1$，其余位置为0。
+首先构造矩阵$G^{ij} \in \mathcal{R}^{N \times N}$，其构造方法为：$G_{ii}^{ij} = 1$，$G_{jj}^{ij} = 1$，$G_{ij}^{ij} = G_{ji}^{ij} = -1$，其余位置为0。
 其中上标为矩阵的名称，下标为矩阵中元素的序号。
 则易得$L = \sum_i \sum_j G^{ij}$。
 又因为$\mathbf{x}^TG^{ij}\mathbf{x}^T = \mathbf{x}^T \cdot \[\cdots, \mathbf{x_i} - \mathbf{x_j}, \cdots, \mathbf{x_j} - \mathbf{x_i}, \cdots\]^T$。
@@ -47,11 +47,16 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 （1）$L_{sym}$的半正定性；
 （2）$L_{sym}$的特征值范围为$\[0, 2\]$，该范围保证了在使用$L_{sym}$时，GCN不会出现梯度爆炸的情况。
 
-证明2(1):
+证明2、(1):
 与$L$证明相似，我们首先构造矩阵集合$G = \\{G^{i, j}\\}^{N, N}_{i, j}$。
 由于$\mathbf{x}^TL_{sym}\mathbf{x}^T = (\mathbf{x}D^{-\frac{1}{2}})^T L (\mathbf{x}D^{-\frac{1}{2}})$。
 根据证明1，易得上式为$\sum_i \sum_j (\frac{\mathbf{x_i}}{\sqrt{d_i}} - \frac{\mathbf{x_i}}{\sqrt{d_j}})^2 \geq 0$，
-其中，$d_i$ 为矩阵$D$中对角
+其中，$d_i$ 为矩阵$D$中对角线上的第$i$个元素。
+
+证明2、(2):
+我们首先构造矩阵集合$S = \\{S^{i, j}\\}^{N, N}_{i, j}$，
+其中$S^{i, j}$与G^{i, j}类似，唯一不同的地方在于，$S_{ij}^{ij} = S_{ji}^{ij} = -1$。
+
 
 根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
 设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{x_i}$，则$L\lambda_i = L\mathbf{x_i}$。
