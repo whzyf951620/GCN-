@@ -69,7 +69,7 @@ $2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mat
 
 $2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T (I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}}) \mathbf{x}$，
 
-化简得$2 &\geq I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}}$，
+化简得$2 \geq I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}}$，
 
 其中$L_{sym} = I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}} \leq 2$。
 证毕。
