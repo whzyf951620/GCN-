@@ -62,9 +62,9 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 由于$L = D - A = \sum_i \sum_j G^{ij}$，而$\sum_i \sum_j S^{ij} = D + A$。
 我们假设$S_{sym} = D^{-\frac{1}{2}}SD^{-\frac{1}{2}} = I + D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$。
 根据证明2、(1)，易得$\mathbf{x}^TS_{sym}\mathbf{x}^T = \sum_i \sum_j (\frac{\mathbf{x_i}}{\sqrt{d_i}} + \frac{\mathbf{x_i}}{\sqrt{d_j}})^2 \geq 0$。
-又因为$\mathbf{x}^TS_{sym}\mathbf{x}^T = \mathbf{x}^T\mathbf{x} + (\mathbf{x}D^{-\frac{1}{2}})^T A (\mathbf{x}D^{-\frac{1}{2}})$，则显然其大于等于0，
-即$\mathbf{x}^T\mathbf{x} \geq -(\mathbf{x}D^{-\frac{1}{2}})^T A (\mathbf{x}D^{-\frac{1}{2}})$，
-$2\cdot\mathbf{x}^T\mathbf{x} \geq \mathbf{x}^T\mathbf{x} - (\mathbf{x}D^{-\frac{1}{2}})^T A (\mathbf{x}D^{-\frac{1}{2}})$，
+又因为$\mathbf{x}^TS_{sym}\mathbf{x}^T = \mathbf{x}^T\mathbf{x} + (\mathbf{x}D^{-\frac{1}{2}})^T A (\mathbf{x}D^{-\frac{1}{2}})$，显然其大于等于0，
+即$\mathbf{x}^T\mathbf{x} \geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})$，
+$2\cdot\mathbf{x}^T\mathbf{x} \geq \mathbf{x}^T\mathbf{x} - (D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})$，
 $2\cdot\mathbf{x}^T\mathbf{x} \geq \mathbf{x}^T (I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}}) \mathbf{x}$，
 化简得$2 &\geq I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}}$，
 其中$L_{sym} = I - D^{-\frac{1}{2}}^T A D^{-\frac{1}{2}} \leq 2$。
