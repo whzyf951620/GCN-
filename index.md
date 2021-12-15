@@ -49,13 +49,15 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 
 证明2、(1):
 与$L$证明相似，我们首先构造矩阵集合$G = \\{G^{i, j}\\}^{N, N}_{i, j}$。
+
 由于$\mathbf{x}^TL_{sym}\mathbf{x}^T = (\mathbf{x}D^{-\frac{1}{2}})^T L (\mathbf{x}D^{-\frac{1}{2}})$。
 根据证明1，易得上式为$\sum_i \sum_j (\frac{\mathbf{x_i}}{\sqrt{d_i}} - \frac{\mathbf{x_i}}{\sqrt{d_j}})^2 \geq 0$，
 其中，$d_i$ 为矩阵$D$中对角线上的第$i$个元素。
 
 证明2、(2):
-我们首先构造矩阵集合$S = \\{S^{i, j}\\}^{N, N}_{i, j}$，
-其中$S^{i, j}$与G^{i, j}类似，唯一不同的地方在于，$S_{ij}^{ij} = S_{ji}^{ij} = -1$。
+我们首先构造矩阵集合$S = \\{S^{i, j}\\}^{N, N}_{i, j}$。
+
+其中$S^{i, j}$与$G^{i, j}$类似，唯一不同的地方在于，$S_{ij}^{ij} = S_{ji}^{ij} = -1$。
 
 
 根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
