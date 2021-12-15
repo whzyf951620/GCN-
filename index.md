@@ -68,15 +68,18 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 即$\mathbf{x}^T\mathbf{x} \geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})$，
 
 $2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})$，
-$2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \mathbf{x}$，
+$2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T (I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})) \mathbf{x}$，
 $2 \geq I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})$，
 $L_{sym} = I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \leq 2$。
 证毕。
 
-根据矩阵分解，$L = U^T \Lambda U$，其中$\Lambda$为L所有特征值组成的对角阵。
-设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{x_i}$，则$L\lambda_i = L\mathbf{x_i}$。
-要证明半正定，即证明对于任意非零向量$\mathbf{x}$，其瑞利熵（Rayleigh quotient）都大于等于0，即$\frac{\mathbf{x}^TL\mathbf{x}}{\mathbf{x}^T\mathbf{x}} \geq 0$。
-根据瑞利定理（Rayleigh theorem），$\lambda_{min} \leq \frac{\mathbf{x}^TL\mathbf{x}}{\mathbf{x}^T\mathbf{x}} \leq \lambda_{max}$，
-且其最大值最小值都在非零向量$\mathbf{x}$为$L$的特征向量时取得。则正定性证明可以转化为：当$\mathbf{x}$为任意$L$的特征向量时，其瑞利熵大于等于0恒成立。
+3、图卷积中的傅里叶变换
+根据半正定矩阵分解，$L_{sym} = U \Lambda U^T$，其中$\Lambda$为L所有特征值组成的对角阵。
+设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{u_i}$，则$L\lambda_i = L\mathbf{u_i}$。
+根据简单的线性代数的知识可知，$U \in \mathcal{R}^{N \times N}$为归一化正交矩阵，又因为其线性无关，
+所以$\\{\cdots \mathbf{u_i} \cdots \\}$为一组$\mathcal{R}^{N \times N}$空间中的正交基。
 
-$\frac{\mathbf{x}^TL\mathbf{x}}{\mathbf{x}^T\mathbf{x}} = \frac{\mathbf{x}^T (\lambda\mathbf{x})}{\mathbf{x}^T\mathbf{x}} = \frac{\lambda(\mathbf{x}^T\mathbf{x})}{\mathbf{x}^T\mathbf{x}}$
+则我们给出图傅里叶变换（Graph Fourier Transform, GFT）：
+对于任意一个图$G$上的信号$\mathbf{x}$，其傅里叶变换为：
+$\tilde{x_k} = \sum_i^N u_{ki}^T x_i = \<\mathbf{u_k}, \mathbf{x}\>$。
+
