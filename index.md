@@ -75,9 +75,9 @@ $L_{sym} = I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \leq 2$。
 
 3、图卷积中的傅里叶变换
 根据半正定矩阵分解，$L_{sym} = U \Lambda U^T$，其中$\Lambda$为L所有特征值组成的对角阵。
-设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{u_i}$，则$L\lambda_i = L\mathbf{u_i}$。
+设$\lambda_i$为矩阵$L$的特征值，其所对应的特征向量为$\mathbf{u_i}$，则$\lambda_iL = L\mathbf{u_i}$。
 根据简单的线性代数的知识可知，$U \in \mathcal{R}^{N \times N}$为归一化正交矩阵，又因为其线性无关，
-所以$\\{\cdots \mathbf{u_i} \cdots \\}$为一组$\mathcal{R}^{N \times N}$空间中的正交基。
+所以$\\{\cdots, \mathbf{u_i}, \cdots \\}$为一组$\mathcal{R}^{N \times N}$空间中的正交基。
 
 则我们给出图傅里叶变换（Graph Fourier Transform, GFT）：
 对于任意一个图$G$上的信号$\mathbf{x}$，其傅里叶变换为：
