@@ -67,9 +67,9 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 又因为$\mathbf{x}^TS_{sym}\mathbf{x}^T = \mathbf{x}^T\mathbf{x} + (\mathbf{x}D^{-\frac{1}{2}})^T A (\mathbf{x}D^{-\frac{1}{2}})$，显然其大于等于0，
 即
 \begin{align}
-\mathbf{x}^T\mathbf{x} &\geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})
-2 \mathbf{x}^T \mathbf{x} &\geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x})
-2 \mathbf{x}^T \mathbf{x} &\geq \mathbf{x}^T (I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})) \mathbf{x}
+\mathbf{x}^T\mathbf{x} &\geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x}) \\
+2 \mathbf{x}^T \mathbf{x} &\geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x}) \\
+2 \mathbf{x}^T \mathbf{x} &\geq \mathbf{x}^T (I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})) \mathbf{x} \\
 2 &\geq I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})
 \end{align}
 易得$L_{sym} = I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \leq 2$。
