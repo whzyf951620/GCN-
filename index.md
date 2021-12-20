@@ -90,10 +90,12 @@ $\mathbf{\tilde{x_k}} = \sum_i^N u_{ki}^T x_i = \<\mathbf{u_k}, \mathbf{x}\>$。
 与常见时序信号傅里叶变换相似的，我们可以在图G的拉普拉斯矩阵的特征向量张成的特征空间中使用其傅里叶基来对G上的任意图信号$\mathbf{x}$进行分解。
 
 下面，我们用一个恒等式来阐述图傅里叶变换与图频谱之间的关系：
+\begin{equation}
 \begin{aligned}
 \mathbf{x}^T L \mathbf{x} &= \mathbf{x}^T D \mathbf{x} - \mathbf{x}^T A \mathbf{x} \\\\
                           &= \sum_{i = 1}^n d_i x_i^2 - \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j \\\\
                           &= \frac{1}{2} \left(\sum_{i = 1}^n d_i x_i^2 - 2 \cdot \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j + \sum_{j = 1}^n d_j x_j^2 \right) \\\\
                           &= \frac{1}{2} \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} (x_i - x_j)^2
 \end{aligned}
+\end{equation}
 上式推导中利用了$d_i = \sum_{j = 1}^n a_{ij}$。
