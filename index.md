@@ -83,9 +83,9 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 
 则我们给出图傅里叶变换（Graph Fourier Transform, GFT）：
 对于任意一个图$G$上的信号$\mathbf{x}$，其傅里叶变换为：
-$\mathbf{\tilde{x}_k} = \sum_i^N u_{ki}^T x_i = \<\mathbf{u_k}, \mathbf{x}\>$。
-我们称特征向量$\mathbf{u}$为傅里叶基，$\mathbf{\tilde{x}_k}$为$\mathbf{x}$在傅里叶基上的傅里叶系数。
+$\mathbf{\tilde{x_k}} = \sum_i^N u_{ki}^T x_i = \<\mathbf{u_k}, \mathbf{x}\>$。
+我们称特征向量$\mathbf{u}$为傅里叶基，$\mathbf{\tilde{x_k}}$为$\mathbf{x}$在傅里叶基上的傅里叶系数。
 其实，我们可以看出傅里叶系数的本质就是$\mathbf{x}$在傅里叶基上的投影，衡量了$\mathbf{x}$与$\mathbf{u}$之间的相似度。
-又$\mathbf{u}$为正交阵，有$\mathbf{u}\mathbf{u}^T = I$，则我们可以得到逆傅里叶变换$\mathbf{x} = \mathbf{u}\mathbf{\tilde{x}_k}$。
+又$\mathbf{u}$为正交阵，有$\mathbf{u}\mathbf{u}^T = I$，则我们可以得到逆傅里叶变换$\mathbf{x} = \mathbf{u}\mathbf{\tilde{x_k}}$。
 
-
+与常见时序信号傅里叶变换相似的，我们可以在图G的拉普拉斯矩阵的特征向量张成的特征空间中使用其傅里叶基来对G上的任意图信号$\mathbf{x}$进行分解。
