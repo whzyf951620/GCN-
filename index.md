@@ -3,7 +3,7 @@
 原文链接：https://arxiv.org/abs/1609.02907 发表于ICLR2016.
 
 <head>
-    <script <script type="text/javascript" async
+    <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     <script type="text/x-mathjax-config">
