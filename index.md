@@ -66,12 +66,12 @@ $L_{sym} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}} = I - D^{-\frac{1}{2}}AD^{-\frac{1}
 根据证明2、(1)，易得$\mathbf{x}^TS_{sym}\mathbf{x}^T = \sum_i \sum_j (\frac{\mathbf{x_i}}{\sqrt{d_i}} + \frac{\mathbf{x_i}}{\sqrt{d_j}})^2 \geq 0$。
 又因为$\mathbf{x}^TS_{sym}\mathbf{x}^T = \mathbf{x}^T\mathbf{x} + (\mathbf{x}D^{-\frac{1}{2}})^T A (\mathbf{x}D^{-\frac{1}{2}})$，显然其大于等于0，
 即
-
-\mathbf{x}^T\mathbf{x} \geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x}) 
-2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x}) 
-2 \mathbf{x}^T \mathbf{x} \geq \mathbf{x}^T (I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})) \mathbf{x} 
-2 \geq I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})
-
+\begin{aligned}
+\mathbf{x}^T\mathbf{x} &\geq -(D^{-\frac{1}{2}}\mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x}) \\\\
+2 \mathbf{x}^T \mathbf{x} &\geq \mathbf{x}^T \mathbf{x} - (D^{-\frac{1}{2}} \mathbf{x})^T A (D^{-\frac{1}{2}}\mathbf{x}) \\\\
+2 \mathbf{x}^T \mathbf{x} &\geq \mathbf{x}^T (I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})) \mathbf{x} \\\\
+2 &\geq I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}})
+\end{aligned}
 易得$L_{sym} = I - (D^{-\frac{1}{2}})^T A (D^{-\frac{1}{2}}) \leq 2$。
 证毕。
 
@@ -91,9 +91,9 @@ $\mathbf{\tilde{x_k}} = \sum_i^N u_{ki}^T x_i = \<\mathbf{u_k}, \mathbf{x}\>$。
 
 下面，我们用一个恒等式来阐述图傅里叶变换与图频谱之间的关系：
 \begin{aligned}
-\mathbf{x}^T L \mathbf{x} &= \mathbf{x}^T D \mathbf{x} - \mathbf{x}^T A \mathbf{x} \\
-                          &= \sum_{i = 1}^n d_i x_i^2 - \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j \\ 
-                          &= \frac{1}{2} \left(\sum_{i = 1}^n d_i x_i^2 - 2 \cdot \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j + \sum_{j = 1}^n d_j x_j^2 \right) \\
+\mathbf{x}^T L \mathbf{x} &= \mathbf{x}^T D \mathbf{x} - \mathbf{x}^T A \mathbf{x} \\\\
+                          &= \sum_{i = 1}^n d_i x_i^2 - \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j \\\\
+                          &= \frac{1}{2} \left(\sum_{i = 1}^n d_i x_i^2 - 2 \cdot \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j + \sum_{j = 1}^n d_j x_j^2 \right) \\\\
                           &= \frac{1}{2} \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} (x_i - x_j)^2
 \end{aligned}
 上式推导中利用了$d_i = \sum_{j = 1}^n a_{ij}$。
