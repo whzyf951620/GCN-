@@ -92,11 +92,12 @@ $\mathbf{\tilde{x_k}} = \sum_i^N u_{ki}^T x_i = \<\mathbf{u_k}, \mathbf{x}\>$。
 与常见时序信号傅里叶变换相似的，我们可以在图G的拉普拉斯矩阵的特征向量张成的特征空间中使用其傅里叶基来对G上的任意图信号$\mathbf{x}$进行分解。
 
 下面，我们用一个恒等式来阐述图傅里叶变换与图频谱之间的关系：
-$\mathbf{x}^T L \mathbf{x} = \mathbf{x}^T D \mathbf{x} - \mathbf{x}^T A \mathbf{x} = \sum_{i = 1}^n d_i x_i^2 - \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j = \frac{1}{2} \left(\sum_{i = 1}^n d_i x_i^2 - 2 \cdot \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j + \sum_{j = 1}^n d_j x_j^2 \right) = \frac{1}{2} \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} (x_i - x_j)^2$
+$\mathbf{x}^T L \mathbf{x} = \mathbf{x}^T D \mathbf{x} - \mathbf{x}^T A \mathbf{x} = \sum_{i = 1}^n d_i x_i^2 - \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j = \frac{1}{2} \left(\sum_{i = 1}^n d_i x_i^2 - 2 \cdot \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} x_i x_j + \sum_{j = 1}^n d_j x_j^2 \right) = \frac{1}{2} \sum_{i = 1}^n \sum_{j = 1}^n a_{ij} (x_i - x_j)^2$，
 上式推导中利用了$d_i = \sum_{j = 1}^n a_{ij}$。
 又$\mathbf{x}^T L \mathbf{x} = \mathbf{x}^T (\mathbf{u} \Lambda \mathbf{u}^T) \mathbf{x} = (\mathbf{u}\mathbf{\tilde{x_k}})^T \mathbf{u} \Lambda \mathbf{u}^T
 (\mathbf{u}\mathbf{\tilde{x_k}}) = \mathbf{\tilde{x_k}}^T \mathbf{u}^T \mathbf{u} \Lambda \mathbf{u}^T \mathbf{u} \mathbf{\tilde{x_k}} = \mathbf{\tilde{x_k}}^T \Lambda
-\mathbf{\tilde{x_k}} = \sum_{k = 1}^N \lambda_k \mathbf{\tilde{x_k}}^2$
-
+\mathbf{\tilde{x_k}} = \sum_{k = 1}^N \lambda_k \mathbf{\tilde{x_k}}^2$，
+假设$\Lambda$中的特征值从小打到大排序，$\mathbf{x}^T L \mathbf{x}$代表了信号$\mathbf{x}$的总差变，其刻画了信号整体的平滑度。
+显然，其为$L$的特征值的线性组合。
 
 
