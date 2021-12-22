@@ -98,6 +98,7 @@ $\mathbf{x}^T L \mathbf{x} = \mathbf{x}^T D \mathbf{x} - \mathbf{x}^T A \mathbf{
 (\mathbf{u}\mathbf{\tilde{x_k}}) = \mathbf{\tilde{x_k}}^T \mathbf{u}^T \mathbf{u} \Lambda \mathbf{u}^T \mathbf{u} \mathbf{\tilde{x_k}} = \mathbf{\tilde{x_k}}^T \Lambda
 \mathbf{\tilde{x_k}} = \sum_{k = 1}^N \lambda_k \mathbf{\tilde{x_k}}^2$，
 假设$\Lambda$中的特征值从小打到大排序，$\mathbf{x}^T L \mathbf{x}$代表了信号$\mathbf{x}$的总差变，其刻画了信号整体的平滑度。
-显然，其为$L$的特征值的线性组合。
+显然，其为$L$的特征值的线性组合。换句话说，与$\mathbf{x}$对应的$L$的特征值可以看作为当前信号$\mathbf{x}$的频率。
+特征值越低，频率越低，对应的傅里叶基变化的越缓慢，相近节点上的信号值趋向于一致，反之亦然。
 
 
