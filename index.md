@@ -27,7 +27,15 @@
 GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: (A, H^{(l)}) \rightarrow H^{(l+1)}$，其中$H^{(l)}$为$l_{th}$层网络的输入，$H^{(l+1)}$为$l_{th}$层网络的输出。
 
 ### GCN (Graph Convolutional Network)
-与GNN不同
+
+实际上，GCN的过程就是利用当前节点及其邻域节点的信息融合来生成对当前节点的表达，该表达可用于Node Classification Tasks；
+再利用pooling技术对整张Graph的node representation information进行融合并提取其不变性，形成整张Graph的Representation，可用于解决Graph Classification Tasks。
+
+##Spatial-based GCN
+基于空间的GCN一般是假设邻接矩阵中相邻节点之间的相似性，利用Clustering + Mean技术来完成graph中拓扑信息的融合和感受野的放大（类似于Pooling技术），
+再利用全连接层对于节点特征维度进行放缩以达到最终的目的。
+
+与CNN不同
 由于图结构本身并没有图像那样标准而简单空间结构，为了实现卷积，即节点$v_i$与其相连的节点交互，我们引入了拉普拉斯算子（矩阵）$L = D - A$。由上述对$D$和$A$的描述，我们可以得到拉普拉斯矩阵的对角线上为节点$v_i$的度，非角线位置$L_{ij} = -1$ if $(v_i, v_j) \in E$ else 0, $i \neq j$。
 
 下面我们对拉普拉斯矩阵$L$及其归一化形式$L_{sym}$的性质进行一些讨论。
