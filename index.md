@@ -31,7 +31,7 @@ GNN的目标是在$l_{th}$层使用神经网络学习一个映射$f: (A, H^{(l)}
 实际上，GCN的过程就是利用当前节点及其邻域节点的信息融合来生成对当前节点的表达，该表达可用于Node Classification Tasks；
 再利用pooling技术对整张Graph的node representation information进行融合并提取其不变性，形成整张Graph的Representation，可用于解决Graph Classification Tasks。
 
-##Spatial-based GCN
+#### Spatial-based GCN
 基于空间的GCN一般是假设邻接矩阵中相邻节点之间的相似性，利用Clustering + Mean技术来完成graph中拓扑信息的融合和感受野的放大（类似于Pooling技术），
 再利用全连接层对于节点特征维度进行放缩以达到最终的目的。
 
